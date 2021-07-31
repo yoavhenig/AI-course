@@ -1,14 +1,8 @@
-# specify the base image
-FROM python:3.7.3-strech
-# make dir
+FROM python 3.7.3-stretch
 RUN mkdir /app
-# set the work dir
 WORKDIR /app
-# copy files
 COPY . .
-# install python and req txt file
-RUN python -m pip3 install --upgrade pip3
-RUN pip3 install -r requirements.txt
-
+RUN python3 -m pip install --upgrade pip
+RUN pip install -r requirements.txt
 # run
-CMD ["python", "upload.py"]
+CMD ["python3","apps.py"]
